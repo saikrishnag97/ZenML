@@ -16,7 +16,7 @@ class Ingestdata:
         logging.info(f"Ingesting data from {self.data_path}")
         return pd.read_csv(self.data_path)
 
-def ingest_df(data_path : str):
+def ingest_df():
     """
     Args:
         data_path
@@ -25,7 +25,7 @@ def ingest_df(data_path : str):
     """
 
     try:
-        ingest_data = Ingestdata(data_path)
+        ingest_data = Ingestdata(r"D:\mlops\ZenML\data\olist_customers_dataset.csv")
         df = ingest_data.get_data
         return df
     except Exception as e:
